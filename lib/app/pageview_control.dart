@@ -53,7 +53,7 @@ class _PageViewControlState extends State<PageViewControl> {
         if (projScrollCtrl.position.maxScrollExtent ==
             projScrollCtrl.position.pixels) {
           goToPage(2, pageCtrl);
-        } else if (projScrollCtrl.position.pixels == 0) {
+        } else if (projScrollCtrl.position.pixels <= 0) {
           goToPage(0, pageCtrl);
         }
       });
