@@ -115,6 +115,7 @@ class _PageViewControlState extends State<PageViewControl> {
             ),
             pageViewBody(
               true,
+              Axis.vertical,
             ),
           ],
         ),
@@ -158,6 +159,7 @@ class _PageViewControlState extends State<PageViewControl> {
             ),
             pageViewBody(
               false,
+              Axis.horizontal,
             ),
           ],
         ),
@@ -187,7 +189,7 @@ class _PageViewControlState extends State<PageViewControl> {
     );
   }
 
-  Expanded pageViewBody(bool isDesktop) {
+  Expanded pageViewBody(bool isDesktop, scrollDirection) {
     return Expanded(
       child: Padding(
         padding: isDesktop
@@ -197,7 +199,7 @@ class _PageViewControlState extends State<PageViewControl> {
           // physics: const NeverScrollableScrollPhysics(),
           pageSnapping: true,
           controller: pageCtrl,
-          scrollDirection: Axis.vertical,
+          scrollDirection: scrollDirection,
           onPageChanged: (p) {
             setState(() {
               pageIndex = p;

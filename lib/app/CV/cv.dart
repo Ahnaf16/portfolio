@@ -159,10 +159,15 @@ class CVpage extends StatelessWidget {
                 ],
               ),
             ),
-            Divider(
-              indent: MediaQuery.of(context).size.width * 0.2,
-              endIndent: MediaQuery.of(context).size.width * 0.2,
-              height: 50,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Center(
+                child: Container(
+                  height: 1,
+                  width: MediaQuery.of(context).size.width * .2,
+                  color: Colors.grey,
+                ),
+              ),
             ),
 
             //---------------------------high school
@@ -230,8 +235,15 @@ class CVpage extends StatelessWidget {
                 ],
               ),
             ),
-            const Divider(
-              height: 60,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Center(
+                child: Container(
+                  height: 1,
+                  // width: MediaQuery.of(context).size.width * .2,
+                  color: Colors.grey,
+                ),
+              ),
             ),
             //---------------------------EXPERIENCE
 
@@ -282,10 +294,15 @@ class CVpage extends StatelessWidget {
                 ],
               ),
             ),
-            Divider(
-              indent: MediaQuery.of(context).size.width * 0.2,
-              endIndent: MediaQuery.of(context).size.width * 0.2,
-              height: 50,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Center(
+                child: Container(
+                  height: 1,
+                  width: MediaQuery.of(context).size.width * .2,
+                  color: Colors.grey,
+                ),
+              ),
             ),
             //---------------------------ledp
             SelectableText(
@@ -328,10 +345,15 @@ class CVpage extends StatelessWidget {
                 ],
               ),
             ),
-            Divider(
-              indent: MediaQuery.of(context).size.width * 0.2,
-              endIndent: MediaQuery.of(context).size.width * 0.2,
-              height: 50,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Center(
+                child: Container(
+                  height: 1,
+                  width: MediaQuery.of(context).size.width * .2,
+                  color: Colors.grey,
+                ),
+              ),
             ),
             //---------------------------ccna
             SelectableText(
@@ -447,7 +469,16 @@ class CVpage extends StatelessWidget {
               icon: MdiIcons.github,
               lebel: 'Ahnaf16',
             ),
-            const Divider(),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Center(
+                child: Container(
+                  height: 1,
+                  // width: MediaQuery.of(context).size.width * .2,
+                  color: Colors.grey,
+                ),
+              ),
+            ),
             Text(
               'Skills',
               style: textTheme.headline4,
@@ -507,7 +538,16 @@ class CVpage extends StatelessWidget {
                 MdiIcons.animationPlayOutline,
               ),
             ),
-            const Divider(),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Center(
+                child: Container(
+                  height: 1,
+                  // width: MediaQuery.of(context).size.width * .2,
+                  color: Colors.grey,
+                ),
+              ),
+            ),
             Text(
               'Languages',
               style: textTheme.headline4,
