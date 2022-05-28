@@ -69,9 +69,9 @@ class MySelf extends StatelessWidget {
                 avatar(),
                 const SizedBox(height: 20),
                 myIntro(
+                  Theme.of(context).textTheme.headline2!,
                   Theme.of(context).textTheme.headline4!,
                   Theme.of(context).textTheme.headline5!,
-                  Theme.of(context).textTheme.headline6!,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20),
@@ -88,7 +88,13 @@ class MySelf extends StatelessWidget {
                   height: 10,
                 ),
                 tech(),
-                const Divider(height: 50),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: Container(
+                    height: 1,
+                    color: Colors.grey,
+                  ),
+                ),
                 Text(
                   'Contact me at - ',
                   style: Theme.of(context).textTheme.headline5,
@@ -402,51 +408,51 @@ class MySelf extends StatelessWidget {
     );
   }
 
-  Text myIntro(TextStyle head2, TextStyle head4, TextStyle head5) {
-    return Text.rich(
-      TextSpan(
-        text: 'Hi,',
-        style: head2.copyWith(
-          height: 1.2,
+  Column myIntro(TextStyle head2, TextStyle head4, TextStyle head5) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Text(
+          'Hi',
+          style: head2.copyWith(
+            height: 1.2,
+          ),
         ),
-        children: [
-          const TextSpan(
-            text: '\n',
+        Text(
+          'I\'m Ahnaf.',
+          style: head2.copyWith(
+            height: 1.2,
           ),
-          const TextSpan(
-            text: 'I\'m Ahnaf',
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Text(
+          'A Full Stack Cross-Platform Appilcation Developer',
+          style: head4.copyWith(
+            height: 1.2,
           ),
-          const TextSpan(
-            text: '\n',
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Text(
+          'I\'m from Bangladesh. I spend most of my time coding and learning new things.',
+          style: head5.copyWith(
+            height: 1.2,
           ),
-          TextSpan(
-            text: 'A Full Stack Cross-Platform Appilcation Developer',
-            style: head4.copyWith(
-              height: 1.5,
-            ),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Text(
+          'My hobby is Gaming, Drawing, Reading Books and watching Anime.',
+          style: head5.copyWith(
+            height: 1.2,
           ),
-          const TextSpan(
-            text: '\n',
-          ),
-          TextSpan(
-            text:
-                'I\'m from Bangladesh. I spend most of my time coding and learning new things.',
-            style: head5.copyWith(
-              height: 1.5,
-            ),
-          ),
-          const TextSpan(
-            text: '\n',
-          ),
-          TextSpan(
-            text:
-                'My hobby is Gaming, Drawing, Reading Books and watching Anime',
-            style: head5.copyWith(
-              height: 1.5,
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 

@@ -19,6 +19,7 @@ class ProjectCarosel extends StatelessWidget {
     this.enableInfiniteScroll = true,
     this.disableCenter = false,
     this.isAsset = false,
+    this.aspectRatio = 3,
   }) : super(key: key);
   final String title;
   final double? viewportFraction;
@@ -32,6 +33,7 @@ class ProjectCarosel extends StatelessWidget {
   final int itemCount;
   final List<String> imgs;
   final bool isAsset;
+  final double aspectRatio;
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +118,7 @@ class ProjectCarosel extends StatelessWidget {
         scrollPhysics: const BouncingScrollPhysics(),
         disableCenter: disableCenter!,
         enableInfiniteScroll: enableInfiniteScroll!,
-        aspectRatio: 3,
+        aspectRatio: aspectRatio,
         viewportFraction: viewportFraction!,
         initialPage: initialPage!,
       ),

@@ -21,7 +21,7 @@ class PageViewControl extends StatefulWidget {
 }
 
 class _PageViewControlState extends State<PageViewControl> {
-  final PageController pageCtrl = PageController();
+  PageController pageCtrl = PageController();
 
   late ScrollController mpScrollCtrl;
   late ScrollController projScrollCtrl;
@@ -41,28 +41,28 @@ class _PageViewControlState extends State<PageViewControl> {
   @override
   void initState() {
     super.initState();
-    mpScrollCtrl = ScrollController()
-      ..addListener(() {
-        if (mpScrollCtrl.position.maxScrollExtent ==
-            mpScrollCtrl.position.pixels) {
-          goToPage(1, pageCtrl);
-        }
-      });
-    projScrollCtrl = ScrollController()
-      ..addListener(() {
-        if (projScrollCtrl.position.maxScrollExtent ==
-            projScrollCtrl.position.pixels) {
-          goToPage(2, pageCtrl);
-        } else if (projScrollCtrl.position.pixels <= 0) {
-          goToPage(0, pageCtrl);
-        }
-      });
-    cvScrollCtrl = ScrollController()
-      ..addListener(() {
-        if (cvScrollCtrl.position.pixels == 0) {
-          goToPage(1, pageCtrl);
-        }
-      });
+    mpScrollCtrl = ScrollController();
+    // ..addListener(() {
+    //   if (mpScrollCtrl.position.maxScrollExtent ==
+    //       mpScrollCtrl.position.pixels) {
+    //     goToPage(1, pageCtrl);
+    //   }
+    // });
+    projScrollCtrl = ScrollController();
+    // ..addListener(() {
+    // if (projScrollCtrl.position.maxScrollExtent ==
+    //     projScrollCtrl.position.pixels) {
+    //   goToPage(2, pageCtrl);
+    // } else if (projScrollCtrl.position.pixels <= 0) {
+    //   goToPage(0, pageCtrl);
+    // }
+    // });
+    cvScrollCtrl = ScrollController();
+    // ..addListener(() {
+    // if (cvScrollCtrl.position.pixels == 0) {
+    //   goToPage(1, pageCtrl);
+    // }
+    // });
   }
 
   @override
@@ -82,7 +82,7 @@ class _PageViewControlState extends State<PageViewControl> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
-              width: MediaQuery.of(context).size.width * .09,
+              width: MediaQuery.of(context).size.width * .1,
               child: Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: Column(
@@ -194,7 +194,7 @@ class _PageViewControlState extends State<PageViewControl> {
             ? const EdgeInsets.fromLTRB(10, 10, 40, 20)
             : const EdgeInsets.fromLTRB(10, 0, 10, 10),
         child: PageView(
-          physics: const NeverScrollableScrollPhysics(),
+          // physics: const NeverScrollableScrollPhysics(),
           pageSnapping: true,
           controller: pageCtrl,
           scrollDirection: Axis.vertical,
